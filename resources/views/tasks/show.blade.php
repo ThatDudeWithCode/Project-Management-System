@@ -22,7 +22,10 @@
             <div class="col-lg-12">
                 <div class="card rounded-0">
                     <div class="card-body">
-                        Task
+                        <h3 class="card-title">{{$tasks['name']}}</h3>
+                        <p><small>Assigned to: <a href="">Tristan Elliott</a></small></p>
+                        <p class="card-text">{{$tasks['description']}}</p>
+                        <p><small>{{$tasks['status']}}</small></p>
                     </div>
                 </div>
             </div>

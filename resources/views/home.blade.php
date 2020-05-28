@@ -14,21 +14,21 @@
             <div class="col-lg-4">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="mb-0 p-0"><span class="count pr-2">10</span>Projects</h3>
+                        <h3 class="mb-0 p-0"><span class="count pr-2">{{$projects_count}}</span>Projects</h3>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="mb-0 p-0"><span class="count pr-2">10</span>Clients</h3>
+                        <h3 class="mb-0 p-0"><span class="count pr-2">{{$clients_count}}</span>Clients</h3>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="mb-0 p-0"><span class="count pr-2">10</span>Tasks</h3>
+                        <h3 class="mb-0 p-0"><span class="count pr-2">{{$tasks_count}}</span>Tasks</h3>
                     </div>
                 </div>
             </div>

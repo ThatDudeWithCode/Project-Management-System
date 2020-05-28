@@ -37,9 +37,13 @@
                             <p><small>{{$task['status']}}</small></p>
                         </div>
                         <div class="card-footer">
-                            <a href="" class="btn btn-view">View</a>
-                            <a href="" class="btn btn-edit">Edit</a>
-                            <a href="" class="btn btn-delete">Delete</a>
+                            <a href="{{action('TaskController@show', $task['id'])}}" class="btn btn-view">View</a>
+                            <a href="{{action('TaskController@edit', $task['id'])}}" class="btn btn-edit">Edit</a>
+                            <form action="{{action('TaskController@destroy', $task['id'])}}" method="post" class="delete_form">
+                                @csrf
+                                <input type="hidden" name="_method" value="DELETE" />
+                                <button  type="submit" class="btn btn-delete">Delete</button>
+                            </form>
                         </div>
                     </div>
                 @endforeach

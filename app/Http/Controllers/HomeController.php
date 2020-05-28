@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Client;
+use App\Project;
+use App\Task;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $projects_count = Project::count();
+        $clients_count = Client::count();
+        $tasks_count = Task::count();
+        return view('home', compact('projects_count', 'clients_count', 'tasks_count'));
     }
 }

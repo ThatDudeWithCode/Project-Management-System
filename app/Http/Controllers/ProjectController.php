@@ -32,33 +32,36 @@ class ProjectController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
-        //
+        Project::create($request->all());
+        return redirect('projects');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Project  $project
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Project $project)
+    public function show($id)
     {
-        return view('projects.show');
+        $projects = Project::find($id);
+        return view('projects.show', compact('projects'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Project  $project
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit(Project $project)
+    public function edit($id)
     {
-        return view('projects.edit');
+        $projects = Project::find($id);
+        return view('projects.edit', compact('projects'));
     }
 
     /**
@@ -76,11 +79,14 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Project  $project
-     * @return \Illuminate\Http\Response
+     * @param \App\Project $project
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Project $project)
+    public function destroy($id)
     {
-        //
+        $projects = Project::find($id);
+        $projects->delete();
+        return redirect()->route('projects.index');
     }
 }

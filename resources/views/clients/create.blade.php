@@ -22,7 +22,8 @@
             <div class="col-lg-12">
                 <div class="card rounded-0">
                     <div class="card-body">
-                        <form action="">
+                        <form action="{{route('clients.store')}}" method="post">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">

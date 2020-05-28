@@ -22,10 +22,31 @@
             <div class="col-lg-12">
                 <div class="card rounded-0">
                     <div class="card-body">
-                        client
+                        <span class="float-left">
+                                <img src="https://via.placeholder.com/100x100" class="img-fluid pr-2" alt="client picture">
+                            </span>
+                        <span>
+                                <h3 class="ml-5 mb-0">{{$client['company_name']}}</h3>
+                                Client Name: {{$client['name']}}<br>
+                                Phone Number: {{$client['phone']}}<br>
+                                Email Address: {{$client['email']}}
+                            </span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card rounded-0">
+                    <div class="card-body">
+                        Contact Form Here
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection

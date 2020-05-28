@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item" aria-current="page">Dashboard</li>
+            <ol class="breadcrumb rounded-0">
+                <li class="breadcrumb-item" aria-current="page"><a href="{{url('/home')}}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Projects</li>
             </ol>
         </nav>
@@ -24,12 +24,12 @@
             </div>
         </div>
     </div>
-
+@if(count($projects) > 0 )
     <div class="container mt-4">
         <div class="row">
             <div class="col-lg-12">
                 @foreach($projects as $project)
-                    <div class="card mb-4">
+                    <div class="card mb-4 rounded-0">
                         <div class="card-body">
                             <h3 class="card-title">{{$project['name']}}</h3>
                             <p><small>Assigned to: <a href="">Tristan Elliott</a></small></p>
@@ -49,7 +49,18 @@
                 @endforeach
             </div>
         </div>
-
-
     </div>
+@else
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card rounded-0">
+                    <div class="card-body">
+                        <p class="p-0 m-0">There are no projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endif
 @endsection

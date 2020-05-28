@@ -67,13 +67,19 @@ class ClientController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Client  $client
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Client $client)
+    public function update(Request $request, $id)
     {
-        //
+        $client = Client::find($id);
+        $client->name = $request->get('name');
+        $client->company_name = $request->get('name');
+        $client->phone = $request->get('phone');
+        $client->email = $request->get('email');
+        $client->save();
+        return redirect()->route('clients.index');
     }
 
     /**

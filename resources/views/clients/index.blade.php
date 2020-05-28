@@ -11,27 +11,43 @@
     </div>
 
     <div class="container mt-4">
-        <h3>Clients</h3>
-        <div class="row mt-4">
+        <div class="row">
             <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <span class="float-left">
-                            <img src="https://via.placeholder.com/100x100" class="img-fluid pr-2" alt="client picture">
-                        </span>
-                        <span>
-                            <h3 class="ml-5 mb-0">Company Name</h3>
-                            Client Name:<br>
-                            Phone Number:<br>
-                            Email Address:
-                        </span>
+                <div class="title-section">
+                    <div class="float-left">
+                        <h3 class="p-0 mb-0 pt-1">Clients</h3>
                     </div>
-                    <div class="card-footer">
-                        <a href="" class="btn btn-primary">View</a>
-                        <a href="" class="btn btn-warning">Edit</a>
-                        <a href="" class="btn btn-danger">Delete</a>
+                    <div class="float-right">
+                        <a href="{{url('clients/create')}}" class="btn btn-view">Create Client</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-12">
+                @foreach($clients as $client)
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <span class="float-left">
+                                <img src="https://via.placeholder.com/100x100" class="img-fluid pr-2" alt="client picture">
+                            </span>
+                            <span>
+                                <h3 class="ml-5 mb-0">{{$client['company_name']}}</h3>
+                                Client Name: {{$client['name']}}<br>
+                                Phone Number: {{$client['phone']}}<br>
+                                Email Address: {{$client['email']}}
+                            </span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{action('ClientController@show', $client['id'])}}" class="btn btn-view">View</a>
+                            <a href="" class="btn btn-edit">Edit</a>
+                            <a href="" class="btn btn-delete">Delete</a>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

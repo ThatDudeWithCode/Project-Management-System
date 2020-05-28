@@ -11,47 +11,38 @@
     </div>
 
     <div class="container mt-4">
-        <h3>Tasks</h3>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-section">
+                    <div class="float-left">
+                        <h3 class="p-0 mb-0 pt-1">Tasks</h3>
+                    </div>
+                    <div class="float-right">
+                        <a href="{{url('tasks/create')}}" class="btn btn-view">Create Task</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <div class="row mt-4">
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Task Name</h3>
-                        <p><small>Assigned to: <a href="">Tristan Elliott</a></small></p>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum et ex, laudantium omnis perferendis quam rem. Alias architecto corporis, cumque debitis dolor, fugiat itaque molestiae necessitatibus nemo quaerat repudiandae sequi. Accusamus accusantium aut autem consequuntur est, fuga fugiat itaque iure labore libero praesentium provident quod suscipit. Perferendis quasi temporibus voluptas.</p>
-                        <p><small>20 May 2020</small></p>
-                        <a href="" class="btn btn-primary">View</a>
-                        <a href="" class="btn btn-warning">Edit</a>
-                        <a href="" class="btn btn-danger">Delete</a>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-12">
+                @foreach($tasks as $task)
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title">{{$task['name']}}</h3>
+                            <p><small>Assigned to: <a href="">Tristan Elliott</a></small></p>
+                            <p class="card-text">{{$task['description']}}</p>
+                            <p><small>{{$task['status']}}</small></p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="" class="btn btn-view">View</a>
+                            <a href="" class="btn btn-edit">Edit</a>
+                            <a href="" class="btn btn-delete">Delete</a>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Task Name</h3>
-                        <p><small>Assigned to: <a href="">Tristan Elliott</a></small></p>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum et ex, laudantium omnis perferendis quam rem. Alias architecto corporis, cumque debitis dolor, fugiat itaque molestiae necessitatibus nemo quaerat repudiandae sequi. Accusamus accusantium aut autem consequuntur est, fuga fugiat itaque iure labore libero praesentium provident quod suscipit. Perferendis quasi temporibus voluptas.</p>
-                        <p><small>20 May 2020</small></p>
-                        <a href="" class="btn btn-primary">View</a>
-                        <a href="" class="btn btn-warning">Edit</a>
-                        <a href="" class="btn btn-danger">Delete</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Task Name</h3>
-                        <p><small>Assigned to: <a href="">Tristan Elliott</a></small></p>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum et ex, laudantium omnis perferendis quam rem. Alias architecto corporis, cumque debitis dolor, fugiat itaque molestiae necessitatibus nemo quaerat repudiandae sequi. Accusamus accusantium aut autem consequuntur est, fuga fugiat itaque iure labore libero praesentium provident quod suscipit. Perferendis quasi temporibus voluptas.</p>
-                        <p><small>20 May 2020</small></p>
-                        <a href="" class="btn btn-primary">View</a>
-                        <a href="" class="btn btn-warning">Edit</a>
-                        <a href="" class="btn btn-danger">Delete</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 

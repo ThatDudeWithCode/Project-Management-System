@@ -10928,3 +10928,37 @@ a.text-dark:focus {
   }
 }
 
+.btn-view {
+  background: #3498db;
+  color: white;
+}
+
+.btn-view:hover {
+  background-color: #2980b9;
+  color: white;
+}
+
+.btn-edit {
+  background: #e67e22;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #d35400;
+  color: white;
+}
+
+.btn-delete {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+  color: white;
+}
+
+.btn {
+  border-radius: 0;
+}
+

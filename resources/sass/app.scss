@@ -6,34 +6,5 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-.btn-view {
-    background: #3498db;
-    color: white;
-    &:hover {
-        background-color: #2980b9;
-        color: white;
-    }
-}
-
-.btn-edit {
-    background: #e67e22;
-    color: white;
-    &:hover {
-        background-color: #d35400;
-        color: white;
-    }
-}
-
-.btn-delete {
-    background: #e74c3c;
-    color: white;
-    &:hover {
-        background-color: #c0392b;
-        color: white;
-    }
-}
-
-.btn {
-    border-radius: 0;
-}
+@import "components/alerts";
+@import "components/buttons";
